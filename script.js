@@ -66,3 +66,59 @@ function updatePetals() {
 }
 
 setInterval(drawPetals, 33);
+/* 🌹 Rose + 14 Word Surprise */
+const rose = document.getElementById("rose");
+const wordContainer = document.getElementById("wordContainer");
+
+/* Your 14-word message */
+const words = [
+    "You",
+    "are",
+    "the",
+    "best",
+    "thing",
+    "that",
+    "ever",
+    "happened",
+    "to",
+    "me",
+    "and",
+    "I",
+    "love",
+    "you"
+];
+
+yesBtn.onclick = () => {
+    photo.classList.remove("hidden");
+
+    /* Show blooming rose */
+    rose.classList.remove("hidden");
+
+    setTimeout(() => {
+        rose.classList.add("bloom");
+    }, 100);
+
+    /* Launch word popups */
+    launchWords();
+};
+
+function launchWords() {
+    words.forEach((word, index) => {
+        setTimeout(() => {
+            createWord(word);
+        }, index * 400);
+    });
+}
+
+function createWord(text) {
+    const el = document.createElement("div");
+    el.className = "word";
+    el.innerText = text;
+
+    el.style.left = Math.random() * window.innerWidth + "px";
+    el.style.top = (window.innerHeight - 100) + "px";
+
+    wordContainer.appendChild(el);
+
+    setTimeout(() => el.remove(), 3000);
+}
