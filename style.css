@@ -156,3 +156,20 @@ button:hover {
     30% { opacity:1; }
     100% { transform:translateY(-120px); opacity:0; }
 }
+/* Final Message */
+#finalLove {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:64px;
+    color:white;
+    opacity:0;
+    font-family:"Brush Script MT", "Lucida Handwriting", cursive;
+    text-shadow:0 0 25px rgba(255,182,193,0.9);
+    transition:opacity 2s ease;
+}
+
+#finalLove.show {
+    opacity:1;
+}
