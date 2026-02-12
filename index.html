@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="./style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,8 +10,22 @@
 <!-- Link CSS -->
 <link rel="stylesheet" href="./style.css">
 </head>
-
+    
 <body>
+<button id="beginBtn">Begin</button>
+
+<h1 id="message" class="hidden">
+  Will you be my sweet Valentine?
+</h1>
+
+<button id="yesBtn" class="hidden">Yes 💖</button>
+
+<img id="photo" class="hidden" src="photo.jpeg" alt="Us">
+
+<audio id="song" src="song.mp3"></audio>
+
+<canvas id="petals"></canvas>
+
 
 <!-- Background -->
 <div class="sunset"></div>
@@ -47,7 +62,7 @@
 <audio id="song" src="./song.mp3"></audio>
 
 <!-- Link JavaScript (must be LAST) -->
-<script src="./script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
