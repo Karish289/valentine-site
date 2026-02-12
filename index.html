@@ -1,67 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="./style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Sweet Valentine</title>
 
-<!-- Link CSS -->
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body>
-<button id="beginBtn">Begin</button>
-
-<h1 id="message" class="hidden">
-  Will you be my sweet Valentine?
-</h1>
-
-<button id="yesBtn" class="hidden">Yes 💖</button>
-
-<img id="photo" class="hidden" src="photo.jpeg" alt="Us">
-
-<audio id="song" src="song.mp3"></audio>
-
-<canvas id="petals"></canvas>
-
-
-<!-- Background -->
-<div class="sunset"></div>
-
-<!-- Falling Petals Canvas -->
-<canvas id="petals"></canvas>
 
 <!-- Intro Screen -->
 <div id="intro">
-    <h1>Will you be my sweet Valentine?</h1>
+    <h1>Will you be my sweet Valentine? 💌</h1>
     <button id="beginBtn">Click to begin</button>
 </div>
 
-<!-- Message Popup -->
-<div id="popup" class="hidden">
-    <p id="message"></p>
+<!-- Message -->
+<div id="messageBox" class="hidden">
+    <h2>You're the best thing that's ever happened to me ❤️</h2>
+    <button id="yesBtn">Yes 💘</button>
 </div>
 
-<!-- YES Surprise -->
-<div id="yesSection" class="hidden">
-    <h2>You said YES 💖</h2>
-    <img src="./photo.jpeg" class="photo">
-</div>
-
-<!-- Rose -->
-<div class="rose hidden" id="rose">
-    <div class="petal p1"></div>
-    <div class="petal p2"></div>
-    <div class="petal p3"></div>
-    <div class="petal p4"></div>
+<!-- Final Surprise -->
+<div id="final" class="hidden">
+    <h2>You said YES 🥹</h2>
+    <img src="photo.jpeg" class="photo">
 </div>
 
 <!-- Music -->
-<audio id="song" src="./song.mp3"></audio>
+<audio id="song" src="song.mp3"></audio>
 
-<!-- Link JavaScript (must be LAST) -->
+<!-- Script MUST be last -->
 <script src="script.js"></script>
 
 </body>
