@@ -107,13 +107,48 @@ button:hover {
 }
 
 /* 💌 Word Popups */
+/* Floating Love Words */
 .word {
     position:fixed;
-    font-size:22px;
+    font-size:24px;
     color:white;
     opacity:0;
-    animation:floatUp 3s forwards;
     pointer-events:none;
+    animation:floatAround 5s ease-in-out forwards;
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+@keyframes floatAround {
+    0% {
+        transform:translate(0,0) scale(.8);
+        opacity:0;
+    }
+    20% { opacity:1; }
+    100% {
+        transform:translate(var(--x), var(--y)) scale(1.2);
+        opacity:0;
+    }
+/* Floating Love Words */
+.word {
+    position:fixed;
+    font-size:24px;
+    color:white;
+    opacity:0;
+    pointer-events:none;
+    animation:floatAround 5s ease-in-out forwards;
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+@keyframes floatAround {
+    0% {
+        transform:translate(0,0) scale(.8);
+        opacity:0;
+    }
+    20% { opacity:1; }
+    100% {
+        transform:translate(var(--x), var(--y)) scale(1.2);
+        opacity:0;
+    }
 }
 
 @keyframes floatUp {
