@@ -70,23 +70,24 @@ setInterval(drawPetals, 33);
 const rose = document.getElementById("rose");
 const wordContainer = document.getElementById("wordContainer");
 
-/* Your 14-word message */
+/* Romantic floating traits */
 const words = [
-    "You",
-    "are",
-    "the",
-    "best",
-    "thing",
-    "that",
-    "ever",
-    "happened",
-    "to",
-    "me",
-    "and",
-    "I",
-    "love",
-    "you"
+    "Loving",
+    "Kind",
+    "Gentle Heart",
+    "Funny",
+    "Beautiful Eyes",
+    "Cheeky Smile",
+    "Sexy",
+    "Cutie Pie",
+    "Calming",
+    "Handsome",
+    "Courageous",
+    "Simply Wonderful",
+    "Cuddly",
+    "Peaceful"
 ];
+
 
 yesBtn.onclick = () => {
     photo.classList.remove("hidden");
@@ -115,10 +116,18 @@ function createWord(text) {
     el.className = "word";
     el.innerText = text;
 
+    /* Random start position */
     el.style.left = Math.random() * window.innerWidth + "px";
-    el.style.top = (window.innerHeight - 100) + "px";
+    el.style.top = Math.random() * window.innerHeight + "px";
+
+    /* Random floating direction */
+    const xMove = (Math.random() - 0.5) * 300;
+    const yMove = (Math.random() - 0.5) * 300;
+
+    el.style.setProperty("--x", xMove + "px");
+    el.style.setProperty("--y", yMove + "px");
 
     wordContainer.appendChild(el);
 
-    setTimeout(() => el.remove(), 3000);
+    setTimeout(() => el.remove(), 5000);
 }
