@@ -26,7 +26,6 @@ const words = [
 
 beginBtn.onclick = () => {
 
-    // Fade in music safely
     audio.volume = 0;
     audio.play();
 
@@ -41,7 +40,6 @@ beginBtn.onclick = () => {
     }, 200);
 
     messageBox.classList.remove("hidden");
-
     launchWords();
 
     setTimeout(() => {
@@ -52,14 +50,13 @@ beginBtn.onclick = () => {
 
 yesBtn.onclick = () => {
     final.classList.remove("hidden");
+    showLoveMessage();
 };
 
 function launchWords() {
     words.forEach((word, i) => {
         setTimeout(() => createFloatingWord(word), i * 800);
     });
-
-    setTimeout(showLoveMessage, words.length * 900 + 1200);
 }
 
 function createFloatingWord(text) {
@@ -79,17 +76,14 @@ function showLoveMessage() {
     const msg = document.createElement("div");
     msg.className = "love-message";
     msg.innerText = "I love you";
-
     document.body.appendChild(msg);
 }
 
 function bloomRose() {
     const petals = document.querySelectorAll(".petal");
-
     petals.forEach((petal, i) => {
-        setTimeout(() => {
-            petal.classList.add("open");
-        }, i * 500);
+        setTimeout(() => petal.classList.add("open"), i * 500);
     });
 }
+
 });
