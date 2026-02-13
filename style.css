@@ -181,33 +181,35 @@ button:hover {
 .floating-word {
   position: fixed;
   font-size: 22px;
-  font-weight: 500;
-  color: #ff4d6d;
+  color: white;
+  font-family: 'Poppins', sans-serif;
   animation: floatUp 6s ease-out forwards;
   pointer-events: none;
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0; }
-  20% { opacity: 1; }
-  100% { transform: translateY(-200px); opacity: 0; }
+@keyframes float {
+  from {
+    transform: translateY(40px);
+    opacity: 0;}
+  to {
+    transform: translateY(-120px);
+    opacity: 1;}
 }
 
-/* Final Message */
-.final-message {
+.love-message {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 48px;
-  font-family: "Brush Script MT", cursive;
-  color: #ff3366;
-  animation: fadeIn 3s ease forwards;
+  font-family: 'Brush Script MT', cursive;
+  color: white;
+  animation: fadeIn 2s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -40%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Rose */
