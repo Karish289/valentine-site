@@ -83,26 +83,6 @@ function createFloatingWord(text) {
     setTimeout(() => el.remove(), 6000);
 }
 
-function showLoveScene() {
-
-    const container = document.createElement("div");
-    container.className = "love-scene";
-
-    const msg = document.createElement("div");
-    msg.className = "love-message";
-    msg.innerText = "I love you";
-
-    const img = document.createElement("img");
-    img.src = "photo.jpeg";
-    img.className = "love-photo";
-
-    container.appendChild(msg);
-    container.appendChild(img);
-
-    document.body.appendChild(container);
-}
-
-
 function bloomRose() {
     const petals = document.querySelectorAll(".petal");
     petals.forEach((petal, i) => {
