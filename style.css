@@ -24,6 +24,11 @@ body {
     z-index: 6;
 }
 
+#startButton {
+    position: relative;
+    z-index: 20;
+}
+
 button {
     padding: 15px 25px;
     font-size: 18px;
@@ -79,40 +84,48 @@ button {
     transform: scale(1);
 }
 
-/* Final message */
-.love-message {
+/* Final Love Scene */
+.love-scene {
     position: fixed;
-    top: 18%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 64px;
-    font-family: "Brush Script MT", cursive;
-    color: white;
-    animation: fadeIn 2s ease forwards;
+    inset: 0;
+    background: linear-gradient(to bottom, #f6b1b1, #e88aa0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1.5s ease;
     z-index: 10;
 }
 
+/* Final message */
+.love-message {
+    font-family: "Brush Script MT", cursive;
+    font-size: 70px;
+    color: white;
+    margin-bottom: 30px;
+    animation: floatText 3s ease-in-out infinite alternate;
+}
+
+/* Photo styling */
+.love-photo {
+    width: 320px;
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    animation: photoPop 1.5s ease;
+}
+
+/* Animations */
+@keyframes photoPop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatText {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-10px); }
+}
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-.love-photo {
-    position: fixed;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-    animation: fadeIn 2s ease forwards;
-    z-index: 9;
-}
-
-@keyframes photoAppear {
-    to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-    }
-}
-
