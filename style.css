@@ -236,3 +236,19 @@ button:hover {
 .p2 { left: 30px; top: -20px; }
 .p3 { left: -30px; top: -20px; }
 .p4 { top: -40px; }
+.love-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  font-family: "Brush Script MT", cursive;
+  color: #ff2d55;
+  text-align: center;
+  animation: loveFade 3s ease forwards;
+}
+
+@keyframes loveFade {
+  from { opacity: 0; transform: translate(-50%, -40%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
