@@ -1,31 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-const beginBtn = document.getElementById("beginBtn");
+const startScreen = document.getElementById("startScreen");
+const beginBtn = document.getElementById("startButton");
 const messageBox = document.getElementById("valentineText");
 const yesBtn = document.getElementById("yesBtn");
-const final = document.getElementById("finalLove");
 const rose = document.getElementById("rose");
 const audio = document.getElementById("song");
 
 const words = [
-"Loving",
-"Kind",
-"Gentle Heart",
-"Funny",
-"Beautiful Eyes",
-"Cheeky Smile",
-"Sexy",
-"Cutie Pie",
-"Calming",
-"Handsome",
-"Courageous",
-"Simply Wonderful",
-"Cuddly",
-"Peaceful"
+"Loving","Kind","Gentle Heart","Funny","Beautiful Eyes",
+"Cheeky Smile","Sexy","Cutie Pie","Calming","Handsome",
+"Courageous","Simply Wonderful","Cuddly","Peaceful"
 ];
 
 beginBtn.onclick = () => {
 
+    // ✅ hide start button completely
+    startScreen.classList.add("hidden");
+
+    // ✅ show the question now
+    messageBox.classList.remove("hidden");
+
+    // music fade-in
     audio.volume = 0;
     audio.play();
 
@@ -39,7 +35,6 @@ beginBtn.onclick = () => {
         audio.volume = vol;
     }, 200);
 
-    messageBox.classList.remove("hidden");
     launchWords();
 
     setTimeout(() => {
@@ -48,15 +43,10 @@ beginBtn.onclick = () => {
     }, 2000);
 };
 
-
 yesBtn.onclick = () => {
-    final.classList.remove("hidden");
-
     showLoveMessage();
     showPhoto();
 };
-
-
 
 function launchWords() {
     words.forEach((word, i) => {
@@ -83,14 +73,13 @@ function showLoveMessage() {
     msg.innerText = "I love you";
     document.body.appendChild(msg);
 }
-    function showPhoto() {
+
+function showPhoto() {
     const img = document.createElement("img");
     img.src = "photo.jpeg";
     img.className = "love-photo";
-
     document.body.appendChild(img);
 }
-
 
 function bloomRose() {
     const petals = document.querySelectorAll(".petal");
