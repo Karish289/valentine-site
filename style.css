@@ -85,3 +85,19 @@ button {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+#lovePhoto {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    opacity: 0;
+    transition: all 1.2s ease;
+}
+
+#lovePhoto:not(.hidden) {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
