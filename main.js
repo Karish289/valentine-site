@@ -15,13 +15,10 @@ const words = [
 
 beginBtn.onclick = () => {
 
-    // ✅ hide start button completely
-    startScreen.classList.add("hidden");
+    beginBtn.style.display = "none";   // ✅ hides button
 
-    // ✅ show the question now
     messageBox.classList.remove("hidden");
 
-    // music fade-in
     audio.volume = 0;
     audio.play();
 
@@ -43,10 +40,19 @@ beginBtn.onclick = () => {
     }, 2000);
 };
 
+
 yesBtn.onclick = () => {
-    showLoveMessage();
-    showPhoto();
+
+    // Hide the question + rose
+    messageBox.style.display = "none";
+    rose.style.display = "none";
+
+    // Clear floating words
+    document.querySelectorAll(".floating-word").forEach(el => el.remove());
+
+    showLoveScene();
 };
+
 
 function launchWords() {
     words.forEach((word, i) => {
@@ -67,19 +73,25 @@ function createFloatingWord(text) {
     setTimeout(() => el.remove(), 6000);
 }
 
-function showLoveMessage() {
+function showLoveScene() {
+
+    const container = document.createElement("div");
+    container.className = "love-scene";
+
     const msg = document.createElement("div");
     msg.className = "love-message";
     msg.innerText = "I love you";
-    document.body.appendChild(msg);
-}
 
-function showPhoto() {
     const img = document.createElement("img");
     img.src = "photo.jpeg";
     img.className = "love-photo";
-    document.body.appendChild(img);
+
+    container.appendChild(msg);
+    container.appendChild(img);
+
+    document.body.appendChild(container);
 }
+
 
 function bloomRose() {
     const petals = document.querySelectorAll(".petal");
