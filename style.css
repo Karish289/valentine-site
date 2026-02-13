@@ -14,6 +14,16 @@ body {
     text-align: center;
 }
 
+#startScreen {
+    position: relative;
+    z-index: 5;
+}
+
+#valentineText {
+    position: relative;
+    z-index: 6;
+}
+
 button {
     padding: 15px 25px;
     font-size: 18px;
@@ -71,15 +81,17 @@ button {
 
 /* Final message */
 .love-message {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    text-align: center;
-    font-size: 48px;
-    font-family: cursive;
-    color: #fff;
-    animation: fadeIn 3s ease forwards;
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 64px;
+    font-family: "Brush Script MT", cursive;
+    color: white;
+    animation: fadeIn 2s ease forwards;
+    z-index: 10;
 }
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -87,14 +99,14 @@ button {
 }
 .love-photo {
     position: fixed;
-    bottom: 40px;
+    bottom: 10%;
     left: 50%;
-    transform: translateX(-50%) scale(0.8);
-    width: 260px;
+    transform: translateX(-50%);
+    width: 320px;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    opacity: 0;
-    animation: photoAppear 2s ease forwards;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    animation: fadeIn 2s ease forwards;
+    z-index: 9;
 }
 
 @keyframes photoAppear {
