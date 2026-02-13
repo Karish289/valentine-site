@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+r<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,8 +12,6 @@
 <canvas id="petals"></canvas>
 <div id="valentineText"></div>
 
-<button id="yesBtn" style="display:none;">Yes</button>
-
 <div id="finalLove"></div>
 
 <div id="centerBox">
@@ -21,18 +19,11 @@
     <button id="beginBtn">Click to begin</button>
 
     <!-- Valentine Question -->
-    <div id="messageBox" class="hidden">
-        <h1>Will you be my Valentine?</h1>
+    <div id="valentineText" class="hidden">
+        Will you be my Valentine?
+        <br><br>
+        <button id="yesBtn">Yes ❤️</button>
     </div>
-
-</div>
-    <div id="rose">
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-  <div class="petal"></div>
-</div>
 
 
 <!-- Rose Bloom -->
@@ -44,9 +35,10 @@
     <div class="petal p5"></div>
 </div>
 
+<div id="finalLove" class="hidden"></div>
+    
 <audio id="song" src="song.mp3"></audio>
-
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 
 </html>
