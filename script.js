@@ -5,7 +5,7 @@ const final = document.getElementById("final");
 const rose = document.getElementById("rose");
 const audio = document.getElementById("song");
 
-// 14 words
+// Words to float
 const words = [
 "Loving",
 "Kind",
@@ -23,48 +23,43 @@ const words = [
 "Peaceful"
 ];
 
-beginBtn.addEventListener("click", () => {
+beginBtn.onclick = () => {
 
-    // Start music with fade-in
+    // Safe music fade-in
     audio.volume = 0;
     audio.play();
 
-    let fade = setInterval(() => {
-        if (audio.volume < 1) {
-            audio.volume += 0.05;
-        } else {
+    let vol = 0;
+    const fade = setInterval(() => {
+        vol += 0.03;
+        if (vol >= 1) {
+            vol = 1;
             clearInterval(fade);
         }
+        audio.volume = vol;
     }, 200);
 
-    // Show message
     messageBox.classList.remove("hidden");
 
-    // Start floating words
     launchWords();
 
-    // Show rose
     setTimeout(() => {
         rose.classList.remove("hidden");
         bloomRose();
     }, 2000);
-});
+};
 
-yesBtn.addEventListener("click", () => {
+yesBtn.onclick = () => {
     final.classList.remove("hidden");
-});
+};
 
+// Floating words
 function launchWords() {
     words.forEach((word, i) => {
-        setTimeout(() => {
-            createFloatingWord(word);
-        }, i * 800);
+        setTimeout(() => createFloatingWord(word), i * 800);
     });
 
-    // Final message
-    setTimeout(() => {
-        createFinalMessage();
-    }, words.length * 900 + 1000);
+    setTimeout(showLoveMessage, words.length * 900 + 1000);
 }
 
 function createFloatingWord(text) {
@@ -77,25 +72,18 @@ function createFloatingWord(text) {
 
     document.body.appendChild(el);
 
-    setTimeout(() => {
-        el.remove();
-    }, 6000);
+    setTimeout(() => el.remove(), 6000);
 }
 
-function createFinalMessage() {
+// BIG CENTER MESSAGE
+function showLoveMessage() {
     const msg = document.createElement("div");
-    msg.className = "final-message";
+    msg.className = "love-message";
     msg.innerText = "I love you";
 
     document.body.appendChild(msg);
 }
 
+// Rose blooming
 function bloomRose() {
-    const petals = document.querySelectorAll(".petal");
-
-    petals.forEach((petal, i) => {
-        setTimeout(() => {
-            petal.classList.add("open");
-        }, i * 500);
-    });
-}
+    const petals = document.querySelectorAl
