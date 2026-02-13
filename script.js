@@ -110,6 +110,11 @@ function launchWords() {
         }, index * 400);
     });
 }
+/* After all words float, show final message */
+setTimeout(() => {
+    document.getElementById("finalLove").classList.remove("hidden");
+    document.getElementById("finalLove").classList.add("show");
+}, words.length * 400 + 2000);
 
 function createWord(text) {
     const el = document.createElement("div");
