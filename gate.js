@@ -1,5 +1,5 @@
 // Change this to your password
-const correctPassword = "be-mine";
+const correctPassword = "forever";
 
 // Ask user for password
 const enteredPassword = prompt("Enter the password 💌");
