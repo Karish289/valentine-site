@@ -5,7 +5,6 @@ const final = document.getElementById("final");
 const rose = document.getElementById("rose");
 const audio = document.getElementById("song");
 
-// Words to float
 const words = [
 "Loving",
 "Kind",
@@ -25,7 +24,7 @@ const words = [
 
 beginBtn.onclick = () => {
 
-    // Safe music fade-in
+    // Fade in music safely
     audio.volume = 0;
     audio.play();
 
@@ -53,13 +52,12 @@ yesBtn.onclick = () => {
     final.classList.remove("hidden");
 };
 
-// Floating words
 function launchWords() {
     words.forEach((word, i) => {
         setTimeout(() => createFloatingWord(word), i * 800);
     });
 
-    setTimeout(showLoveMessage, words.length * 900 + 1000);
+    setTimeout(showLoveMessage, words.length * 900 + 1200);
 }
 
 function createFloatingWord(text) {
@@ -75,7 +73,6 @@ function createFloatingWord(text) {
     setTimeout(() => el.remove(), 6000);
 }
 
-// BIG CENTER MESSAGE
 function showLoveMessage() {
     const msg = document.createElement("div");
     msg.className = "love-message";
@@ -84,6 +81,12 @@ function showLoveMessage() {
     document.body.appendChild(msg);
 }
 
-// Rose blooming
 function bloomRose() {
-    const petals = document.querySelectorAl
+    const petals = document.querySelectorAll(".petal");
+
+    petals.forEach((petal, i) => {
+        setTimeout(() => {
+            petal.classList.add("open");
+        }, i * 500);
+    });
+}
