@@ -15,9 +15,8 @@ const words = [
 
 beginBtn.onclick = () => {
 
-    beginBtn.style.display = "none";   // ✅ hides button
-
-    messageBox.classList.remove("hidden");
+    // 🔴 HIDE the start screen completely
+    document.getElementById("startScreen").classList.add("hidden");
 
     audio.volume = 0;
     audio.play();
@@ -32,6 +31,7 @@ beginBtn.onclick = () => {
         audio.volume = vol;
     }, 200);
 
+    messageBox.classList.remove("hidden");
     launchWords();
 
     setTimeout(() => {
@@ -40,17 +40,27 @@ beginBtn.onclick = () => {
     }, 2000);
 };
 
-
 yesBtn.onclick = () => {
 
-    // Hide the question + rose
-    messageBox.style.display = "none";
-    rose.style.display = "none";
+    // 🔴 Hide everything from earlier
+    document.getElementById("valentineText").classList.add("hidden");
+    document.getElementById("rose").classList.add("hidden");
 
-    // Clear floating words
-    document.querySelectorAll(".floating-word").forEach(el => el.remove());
+    // 🔴 Create a clean final screen
+    const scene = document.createElement("div");
+    scene.className = "love-scene";
 
-    showLoveScene();
+    const msg = document.createElement("div");
+    msg.className = "love-message";
+    msg.innerText = "I love you";
+
+    const img = document.createElement("img");
+    img.src = "photo.jpeg";
+    img.className = "love-photo";
+
+    scene.appendChild(msg);
+    scene.appendChild(img);
+    document.body.appendChild(scene);
 };
 
 
