@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
+
 const beginBtn = document.getElementById("beginBtn");
 const messageBox = document.getElementById("valentineText");
 const yesBtn = document.getElementById("yesBtn");
@@ -90,3 +92,4 @@ function bloomRose() {
         }, i * 500);
     });
 }
+});
