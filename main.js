@@ -51,8 +51,10 @@ beginBtn.onclick = () => {
 
 yesBtn.onclick = () => {
     final.classList.remove("hidden");
+    photo.classList.remove("hidden");
     showLoveMessage();
 };
+
 
 function launchWords() {
     words.forEach((word, i) => {
