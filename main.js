@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-const beginBtn = document.getElementById("startButton");
+const beginBtn = document.getElementById("beginBtn");
 const messageBox = document.getElementById("valentineText");
 const yesBtn = document.getElementById("yesBtn");
 const final = document.getElementById("finalLove");
