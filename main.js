@@ -49,11 +49,14 @@ beginBtn.onclick = () => {
     }, 2000);
 };
 
+
 yesBtn.onclick = () => {
     final.classList.remove("hidden");
-    photo.classList.remove("hidden");
+
     showLoveMessage();
+    showPhoto();
 };
+
 
 
 function launchWords() {
@@ -81,6 +84,14 @@ function showLoveMessage() {
     msg.innerText = "I love you";
     document.body.appendChild(msg);
 }
+    function showPhoto() {
+    const img = document.createElement("img");
+    img.src = "photo.jpeg";
+    img.className = "love-photo";
+
+    document.body.appendChild(img);
+}
+
 
 function bloomRose() {
     const petals = document.querySelectorAll(".petal");
