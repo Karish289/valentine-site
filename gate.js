@@ -1,10 +1,7 @@
-// Change this to your password
 const correctPassword = "forever";
 
-// Ask user for password
 const enteredPassword = prompt("Enter the password 💌");
 
-// If wrong → hide the site
 if (enteredPassword !== correctPassword) {
     document.body.innerHTML = `
         <div style="
