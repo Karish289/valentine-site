@@ -173,3 +173,66 @@ button:hover {
 #finalLove.show {
     opacity:1;
 }
+.hidden {
+  display: none;
+}
+
+/* Floating Words */
+.floating-word {
+  position: fixed;
+  font-size: 22px;
+  font-weight: 500;
+  color: #ff4d6d;
+  animation: floatUp 6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-200px); opacity: 0; }
+}
+
+/* Final Message */
+.final-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-family: "Brush Script MT", cursive;
+  color: #ff3366;
+  animation: fadeIn 3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Rose */
+.rose {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.petal {
+  width: 60px;
+  height: 60px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.6s ease;
+}
+
+.petal.open {
+  transform: scale(1);
+}
+
+.p1 { left: 0; }
+.p2 { left: 30px; top: -20px; }
+.p3 { left: -30px; top: -20px; }
+.p4 { top: -40px; }
