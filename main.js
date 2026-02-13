@@ -6,6 +6,7 @@ const yesBtn = document.getElementById("yesBtn");
 const final = document.getElementById("finalLove");
 const rose = document.getElementById("rose");
 const audio = document.getElementById("song");
+const photo = document.getElementById("lovePhoto");
 
 const words = [
 "Loving",
