@@ -1,7 +1,7 @@
 const beginBtn = document.getElementById("beginBtn");
-const messageBox = document.getElementById("messageBox");
+const messageBox = document.getElementById("valentineText");
 const yesBtn = document.getElementById("yesBtn");
-const final = document.getElementById("final");
+const final = document.getElementById("finalLove");
 const rose = document.getElementById("rose");
 const audio = document.getElementById("song");
 
